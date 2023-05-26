@@ -3,4 +3,7 @@ from django.http import HttpResponse
 
 # Create your views here.
 def home(request):
-    return HttpResponse("Pls work")
+    return render(request, 'home.html')
+
+def article(request):
+    return render(request, 'articles.html')
