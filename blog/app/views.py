@@ -14,5 +14,5 @@ def results(request, question_id):
 
 def testing(request, numbering):
     response = ('This is the testing page number %s')
-    return HttpResponse(response % numbering)
+    return HttpResponse(response % numbering )
 
