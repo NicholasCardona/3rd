@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Article
 
 # Create your views here.
 def home(request):
@@ -16,3 +17,5 @@ def testing(request, numbering):
     response = ('This is the testing page number %s')
     return HttpResponse(response % numbering )
 
+def article_list(request):
+    article = Article.objects.all()
