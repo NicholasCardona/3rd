@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet"  href= static/styles.css>
+
 <h1>The home page</h1>
 
 <h2> The Registered names on the system are:</h2>
@@ -10,6 +13,7 @@
         <h3>The Name: {{name.name}}</h3>
         <p>Their Financial status: {{name.Finances}}</p>
         </div>
+        <p>The body of the Student: {{name.shorten}}</p>
     {% endfor %}
 </div>
 

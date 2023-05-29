@@ -24,3 +24,6 @@ def article_list(request):
 def home(request):
     names = Student.objects.all()
     return render(request, 'home.html', {'names':names})
+
+def index(request):
+    return render(request, 'index.html')

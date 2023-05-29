@@ -38,6 +38,10 @@ class Student(models.Model):
         choices=CHOICES,
         default='mid',
     )
-
+    
+    body = models.TextField()
     def __str__(self):
         return self.name
+    
+    def shorten(self):
+        return self.body[:50] + '...'
