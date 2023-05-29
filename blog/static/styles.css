@@ -1,28 +1,21 @@
 body{
-    
-        background-image: url("Images/Background.jpg");
-        background-color: white;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
+  background-color: #0f121f;
+  background-image: url(Images/stars.png);
+  background-repeat-y: no-repeat;
+  color: #fff;
 }
 
-h1 {
-   
-    color: white;
-  }
-
-h2 {
-
-color: white;
+body *{
+  font-family: Ubuntu;
 }
 
-h3 {
-
-color: white;
+h1, h2, h3, h4, h5{
+  font-weight: normal;
+  margin: 0;
 }
 
-p {
-
-color: white;
+a, a:hover, a:visited{
+  color: #fff;
+  text-decoration: none;
 }
+

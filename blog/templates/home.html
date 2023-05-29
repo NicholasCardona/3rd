@@ -1,6 +1,7 @@
-{% load static %}
-<link rel="stylesheet"  href= static/styles.css>
+{%extends 'base.html'%}
 
+
+{% block content%}
 <h1>The home page</h1>
 
 <h2> The Registered names on the system are:</h2>
@@ -9,7 +10,7 @@
 
 <div class="names">
     {% for name in names %}
-        <div class = 'names'>   
+        <div class = 'names \n'>   
         <h3>The Name: {{name.name}}</h3>
         <p>Their Financial status: {{name.Finances}}</p>
         </div>
@@ -17,4 +18,5 @@
     {% endfor %}
 </div>
 
+{%endblock%}
 
