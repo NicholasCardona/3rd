@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Article
+from .models import Article, Student
 
 # Create your views here.
-def home(request):
-    return render(request, 'home.html')
+
 
 def article(request):
     return render(request, 'articles.html')
@@ -18,4 +17,10 @@ def testing(request, numbering):
     return HttpResponse(response % numbering )
 
 def article_list(request):
-    article = Article.objects.all()
+    articles = Article.objects.all().order_by('date')
+    return render(request, 'articles_list.html', {'article':articles})
+
+
+def home(request):
+    names = Student.objects.all()
+    return render(request, 'home.html', {'names':names})

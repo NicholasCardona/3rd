@@ -15,3 +15,29 @@ class Article(models.Model):
 
     def __str__(self):
         return self.title 
+    
+
+
+
+class Student(models.Model):
+    name = models.TextField()
+    VeryPoor = 'Very Poor'
+    Poor = 'Poor'
+    Mid = 'Normal'
+    Rich = 'Rich'
+    VeryRich = 'Very Rich'
+    CHOICES = [
+        (Poor, "Poor"),
+        (VeryPoor, "Very Poor"),
+        (Mid, "Mid"),
+        (Rich, " Rich"),
+        (VeryRich, "Very Rich")]
+    
+    Finances = models.CharField(
+        max_length=9,
+        choices=CHOICES,
+        default='mid',
+    )
+
+    def __str__(self):
+        return self.name

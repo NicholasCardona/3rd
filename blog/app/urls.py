@@ -10,6 +10,7 @@ urlpatterns = [
     # ex: /polls/5/results/
     path("results/<int:question_id>/", views.results, name="results"),
     path('testing/<int:numbering>', views.testing, name = 'testing'),
+    path('article1/', views.article_list )
 ]
 
 
