@@ -9,6 +9,8 @@
 <!-- <img src = '/static/Images/Firefly.png'/> -->
 <home>The Home Page</home>
 
+<h1> Currently loggin in as: {{username}}</h1>
+
 <h2> The Registered names on the system are:</h2>
 
 
@@ -35,6 +37,8 @@
             <a href="{%url 'Articles:articles' article.slug%}"> <img src = {{article.thumb}} width = 40% height =40% /> </a>
         </div>
     {%endfor%}
+
+
 </div>
 
 
