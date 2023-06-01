@@ -7,7 +7,7 @@
 
 
 <!-- <img src = '/static/Images/Firefly.png'/> -->
-<home>The home page</home>
+<home>The Home Page</home>
 
 <h2> The Registered names on the system are:</h2>
 
@@ -32,6 +32,7 @@
         <div class = 'articles \n'>
             <p> <a href="{%url 'Articles:articles' article.slug%}">{{article.title}}</a></p>
             <n>Date: {{article.date}}</n>
+            <a href="{%url 'Articles:articles' article.slug%}"> <img src = {{article.thumb}} width = 40% height =40% /> </a>
         </div>
     {%endfor%}
 </div>

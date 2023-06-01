@@ -34,12 +34,12 @@ n {
   font-weight: 100;
   font-size: large;
   font-family: Arial, Helvetica, sans-serif;
-  color: purple;
+  color: red;
 }
 
 home{
   font-weight: 300;
-  font-size:xx-large;
+  font-size:100pt;
   font-family: 'Times New Roman', Times, serif;
   color: darkcyan;
 
