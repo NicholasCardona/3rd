@@ -5,16 +5,24 @@ from .models import Article, Student
 # Create your views here.
 
 
-def article(request):
-    return render(request, 'articles.html')
+def article_details(request, slug):
+    article = Article.objects.get(slug=slug)
+    return render(request, 'articles.html', {'articles': article})
+    
 
 
 def home(request):
+    articles = Article.objects.all()
     names = Student.objects.all()
-    return render(request, 'home.html', {'names':names})
+    return render(request, 'home.html',   {'names':names,'articles': articles})
 
 def index(request):
     return render(request, 'index.html')
+
+
+def members(request, name):
+    Members = Student.objects.get(name=name)
+    return render(request, 'members.html', {'members': Members})
 
 
 

@@ -2,7 +2,12 @@
 
 
 {% block content%}
-<h1>The home page</h1>
+
+
+
+
+<!-- <img src = '/static/Images/Firefly.png'/> -->
+<home>The home page</home>
 
 <h2> The Registered names on the system are:</h2>
 
@@ -11,12 +16,26 @@
 <div class="names">
     {% for name in names %}
         <div class = 'names \n'>   
-        <h3>The Name: {{name.name}}</h3>
+        <h3><a href="{%url 'Articles:members' name.name%}">The Name: {{name.name}}</a> </h3>
         <p>Their Financial status: {{name.Finances}}</p>
         </div>
         <p>The body of the Student: {{name.shorten}}</p>
     {% endfor %}
 </div>
 
-{%endblock%}
 
+<h1>The Articles present are:</h1>
+<div class = 'articles'>
+
+    {%for article in articles%}
+
+        <div class = 'articles \n'>
+            <p> <a href="{%url 'Articles:articles' article.slug%}">{{article.title}}</a></p>
+            <n>Date: {{article.date}}</n>
+        </div>
+    {%endfor%}
+</div>
+
+
+
+ {%endblock%}
