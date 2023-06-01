@@ -1,12 +1,33 @@
 {% load static %}
-<link rel="stylesheet"  href= "{% static 'styles.css'%}">
 
-<a href="{%url 'Articles:home'%}"> <img src = "{% static 'Images/Firefly.png'%}"  width="10%", height="10%"/> </a>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>My articles</title>    
+        <link rel="stylesheet"  href= "{% static 'styles.css'%}">
+    </head>
+    <body>
+        <header class = 'wrapper'>
+            <a href="{%url 'Articles:home'%}"> <img src = "{% static 'Images/Firefly.png'%}"  width="10%", height="10%"/> </a>
 
-{% block content%}
+            <nav>
+                <ul>    
+                    <li>
+                        <form class = 'log-out link' action = "{%url 'Accounts:logout'%}" method = 'POST'> 
+                        {%csrf_token%}
+                        <button type="submit"> Logout </button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <div class ='wrapper'>
+
+            {% block content%}
+            {% endblock%}
+        </div>
+    </body>
 
 
-
-
-
-{% endblock%}
+</html>

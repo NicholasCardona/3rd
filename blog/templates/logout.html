@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>You have been logged out</h2>
+    
+    <nav>
+        <ul>    
+            <li>
+                <form class = 'log-in link' action = "{%url 'Accounts:login'%}" method = 'POST'> 
+                {%csrf_token%}
+                <button type="submit"> Login </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+{% endblock  %}
