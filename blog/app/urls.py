@@ -11,7 +11,8 @@ urlpatterns = [
     path("", views.home, name='home'),
     path('articles/<slug>', views.article_details, name = 'articles'),
     path('index/', views.index, name ='index'),
-    path('members/<name>', views.members, name='members')
+    path('members/<name>', views.members, name='members'),
+    path('drivers/', views.drivers, name='drivers')
     
 
 

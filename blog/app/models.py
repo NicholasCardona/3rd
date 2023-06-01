@@ -46,3 +46,29 @@ class Student(models.Model):
     
     def shorten(self):
         return self.body[:50] + '...'
+    
+
+
+class Drivers(models.Model):
+    TEAMS = (
+    ('RedBull' , 'Redbull'),
+    ('Mercedes' , 'Mercedes'),
+    ('AstonMartin' , 'Aston Martin'),
+    ('Ferrari', 'Ferrari'),
+    ('AlphaTauri', 'Alpha Tauri'),
+    ('AlphaRomeo', 'Alpha Romeo'),
+    ('Williams', 'Williams'),
+    ('Hass', 'Hass'),
+    ('McLaren', 'McLaren'),
+    ('Alpine', 'Alpine'),
+    )
+    
+    name = models.TextField()
+    team = models.CharField(max_length=20, choices=TEAMS)
+    thumb = models.ImageField(default='default_f1.jpeg', blank=True)
+
+
+    def __str__(self):
+        return self.name
+
+

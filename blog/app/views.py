@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Article, Student
+from .models import Article, Student, Drivers
 
 # Create your views here.
 
@@ -23,6 +23,11 @@ def index(request):
 def members(request, name):
     Members = Student.objects.get(name=name)
     return render(request, 'members.html', {'members': Members})
+
+
+def drivers(request):
+        Drivers_list = Drivers.objects.all()
+        return render(request, 'Drivers.html', {'Drivers':Drivers_list})
 
 
 

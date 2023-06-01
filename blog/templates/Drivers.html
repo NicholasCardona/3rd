@@ -1,0 +1,15 @@
+{%extends 'base.html'%}
+
+{% block content%}
+
+
+<h1>Drivers template</h1>
+
+{%for driver in Drivers%} 
+<h1>{{driver.name}}</h1>
+<p>{{driver.team}}</p>
+<img src = {{driver.thumb.url}} width="100pt" height="100pt" />
+{%endfor%}
+
+
+{% endblock %}
