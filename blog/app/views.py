@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Article, Student, Drivers
- 
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 
@@ -29,6 +29,11 @@ def members(request, name):
 def drivers(request):
         Drivers_list = Drivers.objects.all()
         return render(request, 'Drivers.html', {'Drivers':Drivers_list})
+
+
+@login_required(login_url='Accounts:login')
+def create(request):
+     return render(request, 'create.html')
 
 
 
