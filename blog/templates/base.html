@@ -13,12 +13,28 @@
 
             <nav>
                 <ul>    
+                    {% if user.is_authenticated%}
                     <li>
                         <form class = 'log-out link' action = "{%url 'Accounts:logout'%}" method = 'POST'> 
                         {%csrf_token%}
                         <button type="submit"> Logout </button>
                         </form>
                     </li>
+                    
+    
+
+                        
+                    
+                    {% else%}
+                    <li>
+                        <form class = 'log-in link' action = "{%url 'Accounts:login'%}" method = 'POST'> 
+                        {%csrf_token%}
+                        <button type="submit"> Login </button>
+                        </form>
+                    </li>
+
+
+                    {%endif%}
                 </ul>
             </nav>
         </header>

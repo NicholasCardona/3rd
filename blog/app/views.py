@@ -12,7 +12,7 @@ def article_details(request, slug):
     return render(request, 'articles.html', {'articles': article})
     
 
-
+   
 def home(request):
     articles = Article.objects.all()
     names = Student.objects.all()
