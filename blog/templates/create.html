@@ -4,6 +4,11 @@
 {%block content%} 
 <div class = 'create-article'> 
     <h2>Create a new Article</h2>
+    <form class="site-form" mehtod="post" action="{%url 'Articles:home'%}">
+        {%csrf_token%}
+        {{form}}
+        <input type="submit" value="create">
+    </form>
 </div>
 {%endblock%} 
  

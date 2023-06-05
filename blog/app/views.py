@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Article, Student, Drivers
 from django.contrib.auth.decorators import login_required
+from . import forms
 
 # Create your views here.
 
@@ -33,7 +34,19 @@ def drivers(request):
 
 @login_required(login_url='Accounts:login')
 def create(request):
-     return render(request, 'create.html')
+     
+     if request.method=='POSTß':
+        form = forms.CreateArticle(request.POST, request.FILES)
+        if form.is_valid:
+            instance =  form.save(commit=False)
+            instance.author = request.user
+            instance.save(commit=True)
+            return redirect('home.html')
+        else:
+            form=forms.CreateArticle()
+     else:
+        form = forms.CreateArticle()
+        return render(request, 'create.html', {'form': form})
 
 
 
