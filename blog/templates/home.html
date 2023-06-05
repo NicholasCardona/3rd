@@ -11,10 +11,28 @@
 
 <h1> Currently loggin in as: {{username}}</h1>
 
-<h2> The Registered names on the system are:</h2>
 
 
 
+
+
+<header class = 'wrapper'>
+    
+
+    <nav>
+        <ul>    
+            <li>
+                <form class = 'create link' action = "{%url 'Articles:create'%}" method = 'GET'> 
+                {%csrf_token%}
+                <button type="submit"> Create  </button>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+
+{%  comment %}
 <div class="names">
     {% for name in names %}
         <div class = 'names \n'>   
@@ -24,6 +42,8 @@
         <p>The body of the Student: {{name.shorten}}</p>
     {% endfor %}
 </div>
+
+{%endcomment%}
 
 
 <h1>The Articles present are:</h1>

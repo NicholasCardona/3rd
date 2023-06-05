@@ -23,7 +23,9 @@ def index(request):
 
 
 def members(request, name):
-    Members = Student.objects.get(name=name)
+    Members = Student.objects.get(name=name, )
+    
+    
     return render(request, 'members.html', {'members': Members})
 
 
@@ -35,15 +37,18 @@ def drivers(request):
 @login_required(login_url='Accounts:login')
 def create(request):
      
-     if request.method=='POSTß':
+     if request.method=='POST':
         form = forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid:
             instance =  form.save(commit=False)
             instance.author = request.user
-            instance.save(commit=True)
-            return redirect('home.html')
+            instance.save()
+            
+            return redirect('Articles:home')
+        
         else:
             form=forms.CreateArticle()
+            
      else:
         form = forms.CreateArticle()
         return render(request, 'create.html', {'form': form})
