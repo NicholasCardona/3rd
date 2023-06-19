@@ -9,7 +9,7 @@
     </head>
     <body>
         <header class = 'wrapper'>
-            <a href="{%url 'Articles:home'%}"> <img src = "{% static 'Images/Firefly.png'%}"  width="10%", height="10%"/> </a>
+            <a href="{%url 'Articles:home'%}"> <img src = "{% static 'Images/Firefly.png'%}"  width="50%", height="50%"/> </a>
 
             <nav>
                 <ul>    
@@ -21,6 +21,11 @@
                         </form>
                     </li>
                     
+                    <li><form class="Create link" action="{%url 'Articles:create'%}" method = 'POST'>
+                        {%csrf_token%}
+                    <button type="submit">Create</button>
+                    </form>
+                    </li>
     
 
                         
@@ -32,11 +37,9 @@
                         <button type="submit"> Login </button>
                         </form>
 
-                        <form action="{%url 'Accounts:SignUP'%}" method = 'POST'>
-                            {%csrf_token%}
-                        <button type="submit">Create</button>
+                        
 
-                        </form>
+                        
                     </li>
 
 
